@@ -130,7 +130,7 @@ You can run `crontab -e` in the terminal, and add a line like this to the file i
 
 ```
 # At 13:00 (i.e. 1 PM) every day, send your message to Rep. Valerie Foushee.
-0 13 * * * cd /path/to/the/directory/with/the/script && ./dear-ref-foushee.py
+0 13 * * * cd /path/to/the/directory/with/the/script && ./dear-rep-foushee.py
 ```
 
 Remember to replace `/path/to/the/directory/with/the/script` with the full path to the directory the script is in, which can be gotten with the `pwd` command if you are in the right directory in the terminal.
