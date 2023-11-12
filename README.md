@@ -30,9 +30,11 @@ Rep. Foushee helpfully maintains an apparently standard-compliant GraphQL endpoi
 
 While Rep. Foushee's provided contact page application only works if you complete a Google reCAPTCHA test to demonstrate that Google considers you human, and moreover requires you to [agree to this contract with Google](https://policies.google.com/terms?hl=en) in order to use it, Rep. Foushee has chosen not to require other applications interacting with her GraphQL API to impose this requirement on their users.
 
-Dear Rep. Foushee allows constituents to contact Rep. Foushee without forming any contract with any private company, provided that it is used for Good (see **May I use it?** below).
+Dear Rep. Foushee allows constituents to contact Rep. Foushee, as conveniently as can be, without forming any contract with any private company, provided that it is used for Good (see **May I use it?** below).
 
 # How does it work?
+
+**All traffic from this script includes a `User-Agent` header of `dear-rep-foushee.py 1.0`**, meaning that it can easily be blocked if desired.
 
 The system submits a POST request to Rep. Foushee's `https://foushee.house.gov/graphql` endpoint, with an `application/json` content type.
 
@@ -101,7 +103,26 @@ If Rep. Foushee does not want your message, presumably an error will be returned
 
 `dear-rep-foushee.py` is licensed under the JSON License (see the `LICENSE` file). This means that it must only be used for Good. It may not be used for Evil.
 
+But you don't just have to ask me; you also need to worry about Rep. Valerie Foushee.
+
+As of this writing, [Rep. Foushee's `robots.txt` file](https://foushee.house.gov/robots.txt) provides permission for all automated programs to interact with all parts of Rep. Foushee's web site:
+
+```
+User-agent: *
+Allow: /
+
+# Host
+Host: https://foushee.house.gov
+
+# Sitemap
+Sitemap: https://foushee.house.gov/sitemap.xml
+```
+
+Since Dear Rep. Foushee is mostly an interactive tool, it doesn't itself check `robots.txt`. You are encouraged to do so if you intend to use this script in an automated way, and to continue to check it on a regular basis to see if Rep. Foushee has decided to change it.
+
 # How would I automate it?
+
+**Do not** automate using this script without checking [Rep. Foushee's `robots.txt` file](https://foushee.house.gov/robots.txt) to see if she has asked that you not do so.
 
 If you have a Mac or Linux computer, after you have sent an initial message, you can [use a cronjob to automate](https://ostechnix.com/a-beginners-guide-to-cron-jobs/) contacting Rep. Valerie Foushee every day to express your thoughts.
 
